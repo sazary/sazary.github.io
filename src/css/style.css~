@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'IranianSans';
+    src: local('Iranian Sans'), local('IranSansZ'), url('http://azary.ir/src/font/irsans.ttf') format('truetype');
+}
+body {
+    background-color:#b71111;
+    font-family: 'IranianSans', 'Iranian Sans', Tahoma !important;
+}
+div.text{
+    position:absolute;
+    width:50%;
+    /*display: inline-block;*/
+    overflow:hidden;
+    direction: rtl;
+    font-weight: bold;
+    text-align:center;
+    padding:0px;
+    font-family: inherit;
+}
+div.text div.text_col_main {
+    float:left;
+    width:100%;
+    padding:0px;
+    direction: rtl;
+    color:white;
+}
+div.text div.text_col_sub {
+    float:left;
+    width:100%;
+    margin:-15% 0 0 0px;
+    padding:0px;
+    direction: rtl;
+    color:#111;
+}
+
+div.links{
+    position:absolute;
+    overflow:hidden;
+}
+div.links div.links_col {
+    float:right;
+    padding:0px 10px 10px 0px;
+    padding:5px;
+}
