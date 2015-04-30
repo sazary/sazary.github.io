@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'nasim';
+    src: url('nasim.eot');
+    src: url('nasim.eot?#iefix') format('embedded-opentype'),
+         url('nasim.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+

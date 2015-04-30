@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>A Little Machine Learning In Python</h1>
+                    <h5>by Soroosh Azary Marhabi</h5>
+                    <h5>
+                        <a href="http://azary.ir/">azary.ir</a>
+                    </h5>
+				</section>
+
+				<section>
+					<h2>About Me</h2>
+                    <p>Artificial Intelligence MSc @ Sharif</p>
+					<p>Full Stack Web Developer @ <a href="http://torob.ir/">Torob.ir</a></p>
+                    <p>Come work with us!</p>
+				</section>
+
+                <section>
+                    <h2>A Fictional Problem</h2>
+                    <p>Solved using machine learning algorithms</p>
+                </section>
+
+                <section>
+                    <h2>A fictional fun game </h2>
+                    <p> with in-app-purchasing </p>
+                    <p> You can buy gold </p>
+                    <p> Lets boost up revenue!  </p>
+				</section>
+
+                <section>
+                    <h2>Churn Rate</h2>
+                    <p> Cheaper to keep current users </p>
+                    <p>After he's left is too late</p>
+                </section>
+
+                <section>
+                    <h2>Predict Leavers</h2>
+                    <p>And give them free stuff</p>
+                </section>
+
+                <section>
+                    <h2>What We know</h2>
+                    <p>For each player:</p>
+                    <ul>
+                        <li>Minutes played / week</li>
+                        <li>Money spent / week</li>
+                        <li>Who has left, in the past weeks</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Prediction</h2>
+                    <p>Using data of past 2 weeks,</p>
+                    <p>Predict leavers of this week</p>
+                </section>
+
+                <section>
+                    <h2>Classification</h2>
+                    <p>Classify an input to a class</p>
+                    <p>Some prespecified classes</p>
+                </section>
+
+                <section>
+                    <h2>Training Data</h2>
+                    <p>Minutes & money of 2 weeks ago</p>
+                    <p>Left or stayed in the game in past week</p>
+                </section>
+
+                <section>
+                    <h2>Prediction Data</h2>
+                    <p>Minutes & money of last week</p>
+                    <p>Who will leave in this week</p>
+                </section>
+
+                <section>
+                    <h2>Visualisation</h2>
+                    <img src="./img/d1.svg" width="70%">
+                </section>
+
+                <section>
+                    <h2>Labels</h2>
+                    <img src="./img/d2.svg" width="70%">
+                </section>
+
+                <section>
+                    <h2>Predict</h2>
+                    <img src="./img/d3.svg" width="70%">
+                </section>
+
+                <section>
+                    <h2>The Line</h2>
+                    <img src="./img/d4.svg" width="70%">
+                </section>
+
+                <section>
+                    <h2>SVM</h2>
+                    <p>"Support Vector Machine"</p>
+                    <p>Finds best line</p>
+                </section>
+
+                <section>
+                    <h2>scikit-learn To Rescue</h2>
+                    <p>A kit of Scipy</p>
+                    <p>Very mature</p>
+                    <p>Lots of proven algorithms</p>
+                    <p><a href="http://scikit-learn.org/">scikit-learn.org</a></p>
+                </section>
+
+                <section>
+                    <h2>Code</h2>
+                    <pre><code data-trim>
+from sklearn.svm import SVC
+
+train_parameters = get_parameters()
+train_classes = get_classes()
+predict_parameters = get_parameters_to_predict()
+
+classifier = SVC()
+classifier.fit( train_parameters, train_classes )
+
+predicted_classes = classifier.predict( predict_parameters )
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>SVM Properties</h2>
+                    <p>So fast</p>
+                    <p>Low error rate</p>
+                    <p>"Linear separability" problem</p>
+                </section>
+
+                <section>
+                    <h2>Lack of Luck</h2>
+                    <img src="./img/d5.svg" width="70%">
+                </section>
+                <section>
+                    <h2>k-Nearest Neighbors</h2>
+                    <p>Finds k nearest training samples</p>
+                    <p>Decides by their labels<p>
+                </section>
+                <section>
+                    <h2>kNN Visualisation</h2>
+                    <img src="./img/d6.svg" width="70%">
+                </section>
+
+                <section>
+                    <h2>kNN Code</h2>
+                    <pre><code data-trim="">
+from sklearn.neighbors import KNeighborsClassifier
+
+train_parameters = get_parameters()
+train_classes = get_classes()
+predict_parameters = get_parameters_to_predict()
+
+classifier = KNeighborsClassifier( n_neighbors = 5 )
+classifier.fit( train_parameters, train_classes )
+
+predicted_classes = classifier.predict( predict_parameters )
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>kNN Properties</h2>
+                    <p>No training time</p>
+                    <p>Slow prediction, when training is large</p>
+                </section>
+
+                <section>
+                    <h2>Spending Problem</h2>
+                    <p>Who will spend how much?</p>
+                    <p>Promotions to maximize revenue</p>
+                </section>
+
+                <section>
+                    <h2>What We Know</h2>
+                    <p>For each player:</p>
+                    <ul>
+                        <li>Minutes / week</li>
+                        <li>Money spent / week, for the past weeks</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Training Data</h2>
+                    <p>For each player:</p>
+                    <ul>
+                        <li>Minutes, for 2 weeks ago</li>
+                        <li>Money spent, for last week</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Prediction Data</h2>
+                    <p>For each player:</p>
+                    <ul>
+                        <li>Given minutes played last week,</li>
+                        <li>Predict money for this week</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Visualisation</h2>
+                    <img src="./img/d7.svg" width="70%">
+                </section>
+
+                <section>
+                    <h2>Regression</h2>
+                    <p>Connect the dots!</p>
+                    <p>A real valued function</p>
+                </section>
+
+                <section>
+                    <h2>Visualisation</h2>
+                    <img src="./img/d8.svg" width="70%">
+                </section>
+
+                <section>
+                    <h2>Prediction</h2>
+                    <img src="./img/d9.svg" width="70%">
+                </section>
+
+                <section>
+                    <h2>Code</h2>
+                    <pre><code data-trim="">
+from sklearn.linear_model import ElasticNet
+
+train_parameters = get_parameters()
+train_spendings = get_spendings()
+predict_parameters = get_parameters_to_predict()
+
+regressor = ElasticNet()
+regressor.fit( train_parameters, train_spendings )
+
+predicted_spendings = regressor.predict( predict_parameters )
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Regression Properties</h2>
+                    <p>Bad extrapolation</p>
+                </section>
+
+                <section>
+                    <h2>That's it!<h2>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+                ],
+                rtl: false,
+                slideNumber: true,
+            });
+
+		</script>
+
+	</body>
+</html>
